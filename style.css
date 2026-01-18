@@ -4,7 +4,11 @@
     --text-dark: #2D2D2D;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background-color: var(--bg-color);
@@ -13,76 +17,122 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Elementləri yuxarı, orta və aşağı yayır */
 }
 
+/* Navbar Dizaynı */
 header {
-    padding: 40px;
+    padding: 30px 5%;
+}
+
+.navbar {
     display: flex;
-    justify-content: center; /* Loqonu yuxarı mərkəzə qoyur */
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo img {
-    height: 120px; /* İstədiyin kimi böyütdük */
+    height: 110px; /* Loqonu böyük və nəfəs alan saxladıq */
     width: auto;
 }
 
-.hero {
-    text-align: center;
-    flex-grow: 1;
+.nav-links {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    list-style: none;
+    gap: 35px;
 }
 
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 8vw, 75px);
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 11px;
+    letter-spacing: 2px;
     font-weight: 400;
-    letter-spacing: 8px;
-    margin: 15px 0;
+    transition: color 0.3s ease;
 }
 
-.hero .subtitle {
+.nav-links a:hover {
+    color: var(--velvet-maroon);
+}
+
+/* Hero Section */
+.hero {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tagline {
     font-size: 10px;
-    letter-spacing: 5px;
-    color: #888;
+    letter-spacing: 6px;
+    color: #8c8c8c;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 7vw, 80px);
+    letter-spacing: 10px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.location {
+    font-size: 13px;
+    letter-spacing: 7px;
+    color: var(--velvet-maroon);
 }
 
 .cta-button {
-    margin: 40px auto 0;
+    display: inline-block;
+    margin-top: 45px;
     padding: 18px 45px;
     background-color: var(--velvet-maroon);
     color: white;
     text-decoration: none;
     font-size: 11px;
     letter-spacing: 3px;
-    transition: 0.3s;
+    transition: 0.4s ease;
 }
 
 .cta-button:hover {
-    opacity: 0.9;
+    background-color: #4A2C33;
     letter-spacing: 4px;
 }
 
+/* Footer */
 footer {
     padding: 40px;
     text-align: center;
 }
 
-.instagram-link {
+.instagram-text {
     text-decoration: none;
     color: var(--text-dark);
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 4px;
-    font-weight: 400;
     border-bottom: 1px solid transparent;
     transition: 0.3s;
 }
 
-.instagram-link:hover {
-    border-bottom: 1px solid var(--velvet-maroon);
+.instagram-text:hover {
     color: var(--velvet-maroon);
+    border-bottom: 1px solid var(--velvet-maroon);
+}
+
+/* Mobil üçün uyğunlaşdırma */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .logo img {
+        height: 80px;
+    }
 }
 
 /* Portfolio səhifəsinə məxsus tənzimləmə */
