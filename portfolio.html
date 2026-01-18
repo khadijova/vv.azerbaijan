@@ -3,41 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Velvet Visuals Azerbaijan</title>
+    <title>Portfolio | Velvet Visuals</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body class="portfolio-page">
 
     <header>
-        <div class="logo">
-            <a href="index.html"><img src="logo.png" alt="Velvet Visuals"></a>
-        </div>
-        <nav>
-            <ul>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="logo (1).png" alt="Velvet Visuals"></a>
+            </div>
+            <ul class="nav-links">
                 <li><a href="index.html">ANA SƏHİFƏ</a></li>
                 <li><a href="portfolio.html" class="active">PORTFOLİO</a></li>
-                <li><a href="#contact">ƏLAQƏ</a></li>
+                <li><a href="index.html#contact">ƏLAQƏ</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="portfolio-section">
-        <div class="tabs">
-            <button class="tab-btn active" data-filter="all">Hamısı</button>
-            <button class="tab-btn" data-filter="menu">Menyular</button>
-            <button class="tab-btn" data-filter="logo">Loqolar</button>
-            <button class="tab-btn" data-filter="stationery">Vizitkartlar</button>
+    <main class="portfolio-section">
+        <h2 class="section-title">Kreativ Showcase</h2>
+        
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-name="all">Hamısı</button>
+            <button class="filter-btn" data-name="menu">Menyular</button>
+            <button class="filter-btn" data-name="logo">Loqolar</button>
+            <button class="filter-btn" data-name="stationery">Vizitkartlar</button>
         </div>
 
-        <div class="gallery-grid" id="gallery">
-            <div class="gallery-item menu">
-                <img src="assets/menu1.jpg" alt="Menu Design">
+        <div class="gallery-grid">
+            <div class="card" data-name="menu">
+                <div class="img-box">
+                    <img src="assets/menu1.jpg" alt="Menu Design">
+                </div>
+                <div class="card-info">
+                    <h6>Luxury Menu</h6>
+                    <p>Restaurant Design</p>
+                </div>
             </div>
-            <div class="gallery-item logo">
-                <img src="assets/logo1.jpg" alt="Logo Design">
+
+            <div class="card" data-name="logo">
+                <div class="img-box">
+                    <img src="assets/logo1.jpg" alt="Logo Design">
+                </div>
+                <div class="card-info">
+                    <h6>Modern Identity</h6>
+                    <p>Branding</p>
+                </div>
             </div>
         </div>
-    </section>
+    </main>
 
+    <script src="script.js"></script>
 </body>
 </html>
