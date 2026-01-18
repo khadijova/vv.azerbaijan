@@ -104,3 +104,25 @@ nav a {
 .gallery-item img { width: 100%; height: auto; margin-bottom: 15px; }
 
 .gallery-item h4 { font-family: 'Playfair Display', serif; margin-bottom: 5px; }
+
+/* Portfolio səhifəsinə məxsus tənzimləmə */
+.portfolio-page header {
+    position: relative; /* Hero üzərində deyil, sərbəst görünsün */
+    background-color: var(--white);
+    border-bottom: 1px solid #eee;
+}
+
+.portfolio-section {
+    padding-top: 50px;
+    min-height: 80vh;
+}
+
+/* Şəkillərin yüklənmə effekti */
+.gallery-item {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
