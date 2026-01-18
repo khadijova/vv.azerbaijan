@@ -16,3 +16,21 @@ document.querySelectorAll('.tab-btn').forEach(button => {
         });
     });
 });
+const filterButtons = document.querySelectorAll(".filter-btn");
+const filterableCards = document.querySelectorAll(".card");
+
+const filterCards = e => {
+    document.querySelector(".active").classList.remove("active");
+    e.target.classList.add("active");
+
+    filterableCards.forEach(card => {
+        card.classList.add("hide");
+        
+        if(card.dataset.name === e.target.dataset.name || e.target.dataset.name === "all") {
+            card.classList.remove("hide");
+            card.classList.add("show");
+        }
+    });
+};
+
+filterButtons.forEach(button => button.addEventListener("click", filterCards));
