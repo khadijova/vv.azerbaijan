@@ -1,8 +1,7 @@
 :root {
-    --bg-color: #F2EBE8;      
-    --velvet-maroon: #6B444E;  
+    --bg-color: #F2EBE8;
+    --velvet-maroon: #6B444E;
     --text-dark: #2D2D2D;
-    --white: #FFFFFF;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -11,103 +10,84 @@ body {
     background-color: var(--bg-color);
     font-family: 'Montserrat', sans-serif;
     color: var(--text-dark);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Elementləri yuxarı, orta və aşağı yayır */
 }
 
-
 header {
-    padding: 20px 8%;
+    padding: 40px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 130px; 
+    justify-content: center; /* Loqonu yuxarı mərkəzə qoyur */
 }
 
 .logo img {
-    height: 100px; 
+    height: 120px; /* İstədiyin kimi böyütdük */
     width: auto;
-    transition: transform 0.3s ease;
 }
-
-.logo img:hover { transform: scale(1.05); }
-
-nav ul { display: flex; list-style: none; gap: 30px; }
-
-nav a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-size: 12px;
-    letter-spacing: 2px;
-    font-weight: 300;
-}
-
 
 .hero {
-    height: 70vh;
+    text-align: center;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 70px;
+    font-size: clamp(40px, 8vw, 75px);
     font-weight: 400;
-    margin: 10px 0;
-    letter-spacing: 5px;
+    letter-spacing: 8px;
+    margin: 15px 0;
 }
 
-.hero .subtitle { font-size: 12px; letter-spacing: 4px; color: grey; }
+.hero .subtitle {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #888;
+}
 
 .cta-button {
-    margin-top: 30px;
-    padding: 15px 40px;
+    margin: 40px auto 0;
+    padding: 18px 45px;
     background-color: var(--velvet-maroon);
     color: white;
     text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 2px;
-}
-
-
-.portfolio-section { padding: 80px 8%; background-color: var(--white); }
-
-.tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; }
-
-.tab-btn {
-    padding: 10px 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
     font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #999;
+    letter-spacing: 3px;
+    transition: 0.3s;
 }
 
-.tab-btn.active { color: var(--velvet-maroon); border-bottom: 1px solid var(--velvet-maroon); }
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+.cta-button:hover {
+    opacity: 0.9;
+    letter-spacing: 4px;
 }
 
-.gallery-item {
-    background-color: var(--bg-color);
-    padding: 25px; 
+footer {
+    padding: 40px;
     text-align: center;
-    transition: 0.4s;
 }
 
-.gallery-item img { width: 100%; height: auto; margin-bottom: 15px; }
+.instagram-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 400;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
 
-.gallery-item h4 { font-family: 'Playfair Display', serif; margin-bottom: 5px; }
+.instagram-link:hover {
+    border-bottom: 1px solid var(--velvet-maroon);
+    color: var(--velvet-maroon);
+}
 
 /* Portfolio səhifəsinə məxsus tənzimləmə */
 .portfolio-page header {
-    position: relative; /* Hero üzərində deyil, sərbəst görünsün */
+    position: relative; 
     background-color: var(--white);
     border-bottom: 1px solid #eee;
 }
