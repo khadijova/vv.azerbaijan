@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velvet Visuals Azerbaijan | Digital Design Studio</title>
+    <title>Velvet Visuals Azerbaijan</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 </head>
@@ -15,93 +15,51 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#packages">Paketlər</a></li>
-                <li><a href="#about">Haqqımızda</a></li>
-                <li><a href="#contact">Əlaqə</a></li>
+                <li><a href="#portfolio">PORTFOLİO</a></li>
+                <li><a href="#packages">PAKETLƏR</a></li>
+                <li><a href="#about">HAQQIMIZDA</a></li>
+                <li><a href="#contact">ƏLAQƏ</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <p class="subtitle">Yaradıcılıq və Strategiyanın Görüşdüyü Nöqtə</p>
-            <h1>Velvet Visuals</h1>
-            <p class="location">Azerbaijan</p>
-            <a href="#portfolio" class="cta-button">İşlərimizə Baxın</a>
-        </section>
+    <section class="hero">
+        <p class="subtitle">YARADICILIQ VƏ STRATEGİYANIN GÖRÜŞDÜYÜ NÖQTƏ</p>
+        <h1>Velvet Visuals</h1>
+        <p class="location">AZERBAİJAN</p>
+        <a href="#portfolio" class="cta-button">İşlərimizə Baxın</a>
+    </section>
 
-        <section id="portfolio" class="portfolio-section">
-            <div class="section-title">
-                <h2>Our Creative Showcase</h2>
+    <section id="portfolio" class="portfolio-section">
+        <div class="section-title">
+            <h2>Our Creative Showcase</h2>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-filter="all">Hamısı</button>
+            <button class="tab-btn" data-filter="menu">Menyular</button>
+            <button class="tab-btn" data-filter="logo">Loqolar</button>
+            <button class="tab-btn" data-filter="stationery">Vizitkartlar</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery">
+            <div class="gallery-item menu">
+                <img src="assets/menu1.jpg" alt="Menu Design">
+                <div class="item-info">
+                    <h4>Luxury Dine Menu</h4>
+                    <p>Restoran Dizaynı</p>
+                </div>
             </div>
-
-            <div class="tabs">
-                <button class="tab-btn active" onclick="filterGallery('all')">Hamısı</button>
-                <button class="tab-btn" onclick="filterGallery('menu')">Menyular</button>
-                <button class="tab-btn" onclick="filterGallery('logo')">Loqolar</button>
-                <button class="tab-btn" onclick="filterGallery('stationery')">Vizitkartlar</button>
+            <div class="gallery-item logo">
+                <img src="assets/logo1.jpg" alt="Logo Design">
+                <div class="item-info">
+                    <h4>Minimalist Identity</h4>
+                    <p>Brendinq</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="gallery-grid" id="gallery">
-                
-                <div class="gallery-item menu">
-                    <img src="assets/menu-sample.jpg" alt="Menu Design">
-                    <div class="item-info">
-                        <h4>Minimalist Menu</h4>
-                        <p>Restoran Dizaynı</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item logo">
-                    <img src="assets/logo-sample.jpg" alt="Logo Design">
-                    <div class="item-info">
-                        <h4>Luxury Identity</h4>
-                        <p>Brendinq</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item stationery">
-                    <img src="assets/card-sample.jpg" alt="Business Card">
-                    <div class="item-info">
-                        <h4>Premium Stationery</h4>
-                        <p>Vizitkart</p>
-                    </div>
-                </div>
-
-                </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Velvet Visuals Azerbaijan. Bütün hüquqlar qorunur.</p>
-    </footer>
-
-    <script>
-        function filterGallery(category) {
-            const items = document.querySelectorAll('.gallery-item');
-            const btns = document.querySelectorAll('.tab-btn');
-
-            // Aktiv düyməni dəyişmək
-            btns.forEach(btn => {
-                btn.classList.remove('active');
-                if(btn.innerText.toLowerCase() === category || (category === 'all' && btn.innerText === 'Hamısı')) {
-                    btn.classList.add('active');
-                }
-            });
-
-            // Şəkilləri filtrləmək
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
-                    setTimeout(() => item.style.opacity = '1', 10);
-                } else {
-                    item.style.opacity = '0';
-                    setTimeout(() => item.style.display = 'none', 300);
-                }
-            });
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
