@@ -1,189 +1,106 @@
-/* 1. Brend Rəngləri və Fontlar */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;300;400&display=swap');
-
 :root {
-    --bg-color: #F2EBE8;       /* Sənin göndərdiyin o yumşaq bej fon */
-    --velvet-maroon: #6B444E;  /* Loqodakı tünd bənövşəyi/çəhrayı ton */
-    --velvet-light: #C4929A;   /* Loqodakı açıq "V" rəngi */
-    --text-dark: #2D2D2D;      /* Yazılar üçün tünd boz */
+    --bg-color: #F2EBE8;      
+    --velvet-maroon: #6B444E;  
+    --text-dark: #2D2D2D;
     --white: #FFFFFF;
-    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--bg-color);
-    color: var(--text-dark);
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
+    color: var(--text-dark);
 }
 
-/* 2. Naviqasiya (Üst Menyü) */
+
 header {
-    padding: 30px 10%;
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
-    position: absolute;
-    width: 100%;
-    z-index: 100;
+    min-height: 130px; 
 }
 
 .logo img {
-    height: 60px; /* Loqonun ölçüsünü buradan tənzimləyə bilərsən */
+    height: 100px; 
+    width: auto;
+    transition: transform 0.3s ease;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 40px;
-}
+.logo img:hover { transform: scale(1.05); }
+
+nav ul { display: flex; list-style: none; gap: 30px; }
 
 nav a {
     text-decoration: none;
     color: var(--text-dark);
-    font-weight: 300;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: var(--transition);
+    font-weight: 300;
 }
 
-nav a:hover {
-    color: var(--velvet-maroon);
-}
 
-/* 3. Hero Section (Giriş) */
 .hero {
-    height: 100vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
 }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 6vw, 80px); /* Ekran ölçüsünə görə böyüyüb kiçilən font */
+    font-size: 70px;
     font-weight: 400;
-    margin-bottom: 10px;
-    color: var(--text-dark);
+    margin: 10px 0;
+    letter-spacing: 5px;
 }
 
-.hero p {
-    font-size: 14px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--velvet-maroon);
-    margin-bottom: 30px;
-}
+.hero .subtitle { font-size: 12px; letter-spacing: 4px; color: grey; }
 
 .cta-button {
-    padding: 15px 35px;
+    margin-top: 30px;
+    padding: 15px 40px;
     background-color: var(--velvet-maroon);
-    color: var(--white);
+    color: white;
     text-decoration: none;
     font-size: 12px;
     letter-spacing: 2px;
-    transition: var(--transition);
-    border: 1px solid var(--velvet-maroon);
 }
 
-.cta-button:hover {
-    background-color: transparent;
-    color: var(--velvet-maroon);
-}
 
-/* 4. Portfolio Tab Sistemi */
-.portfolio-section {
-    padding: 80px 10%;
-    background-color: var(--white);
-}
+.portfolio-section { padding: 80px 8%; background-color: var(--white); }
 
-.tabs {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 50px;
-}
+.tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; }
 
 .tab-btn {
+    padding: 10px 20px;
     background: none;
     border: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    cursor: pointer;
+    font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    cursor: pointer;
-    padding: 10px 20px;
     color: #999;
-    transition: var(--transition);
 }
 
-.tab-btn.active, .tab-btn:hover {
-    color: var(--velvet-maroon);
-    border-bottom: 1px solid var(--velvet-maroon);
-}
+.tab-btn.active { color: var(--velvet-maroon); border-bottom: 1px solid var(--velvet-maroon); }
 
-/* 5. Qalereya Grid-i (Olivia Style) */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 40px;
 }
 
 .gallery-item {
-    position: relative;
-    overflow: hidden;
     background-color: var(--bg-color);
-    padding: 20px; /* Şəkillərin ətrafındakı o lüks ağ boşluq */
-    transition: var(--transition);
-}
-
-.gallery-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.item-info {
-    margin-top: 15px;
+    padding: 25px; 
     text-align: center;
+    transition: 0.4s;
 }
 
-.item-info h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-}
+.gallery-item img { width: 100%; height: auto; margin-bottom: 15px; }
 
-.item-info p {
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #888;
-}
-
-/* Mobil Uyğunluq */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 20px;
-    }
-    nav ul {
-        gap: 15px;
-    }
-}
+.gallery-item h4 { font-family: 'Playfair Display', serif; margin-bottom: 5px; }
