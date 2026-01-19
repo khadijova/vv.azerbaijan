@@ -19,18 +19,22 @@ document.querySelectorAll('.tab-btn').forEach(button => {
 const filterButtons = document.querySelectorAll(".filter-btn");
 const filterableCards = document.querySelectorAll(".card");
 
-const filterCards = e => {
-    document.querySelector(".active").classList.remove("active");
-    e.target.classList.add("active");
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        // Aktiv düyməni dəyiş
+        document.querySelector(".filter-btn.active").classList.remove("active");
+        button.classList.add("active");
 
-    filterableCards.forEach(card => {
-        card.classList.add("hide");
-        
-        if(card.dataset.name === e.target.dataset.name || e.target.dataset.name === "all") {
-            card.classList.remove("hide");
-            card.classList.add("show");
-        }
+        const filterName = button.getAttribute("data-name");
+
+        filterableCards.forEach(card => {
+            if (filterName === "all" || card.getAttribute("data-name") === filterName) {
+                card.classList.remove("hide");
+                card.classList.add("show");
+            } else {
+                card.classList.remove("show");
+                card.classList.add("hide");
+            }
+        });
     });
-};
-
-filterButtons.forEach(button => button.addEventListener("click", filterCards));
+});
