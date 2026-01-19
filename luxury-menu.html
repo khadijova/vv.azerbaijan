@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Menu Detalları | Velvet Visuals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="product-detail-page">
+
+    <div class="product-container">
+        <div class="product-visual">
+            <img id="main-menu-img" src="['menyu 1 (1).png', 'menyu 1 (2).png']" alt="Menu Preview">
+        </div>
+
+        <div class="product-details">
+            <h1>Luxury Restaurant Menu</h1>
+            <p class="product-desc">Bu dizayn sizin restoranınıza lüks və zəriflik qatacaq. Tamamilə fərdiləşdirilə bilər.</p>
+            
+            <div class="price-box">
+                <span class="label">Qiymət:</span>
+                <span class="final-price">50 AZN</span>
+            </div>
+
+            <div class="color-selection">
+                <p>Rəng Variantları:</p>
+                <div class="color-options">
+                    <button class="color-btn black active" onclick="changeVariant('menu-black.jpg', '50 AZN')"></button>
+                    <button class="color-btn gold" onclick="changeVariant('menu-gold.jpg', '60 AZN')"></button>
+                    <button class="color-btn white" onclick="changeVariant('menu-white.jpg', '55 AZN')"></button>
+                </div>
+            </div>
+
+            <a href="https://wa.me/sizin-nömrəniz" class="order-btn">Sifariş Et (WhatsApp)</a>
+        </div>
+    </div>
+
+    <script>
+        function changeVariant(imagePath, price) {
+            // Şəkli dəyiş
+            document.getElementById('main-menu-img').src = imagePath;
+            // Qiyməti dəyiş
+            document.querySelector('.final-price').innerText = price;
+            
+            // Aktiv düymə stilini yenilə
+            document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
